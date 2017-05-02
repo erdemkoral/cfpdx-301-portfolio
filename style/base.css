@@ -13,90 +13,22 @@ body {
   margin:auto;
 }
 
-/*header {
-  line-height: 0.8;
-  font-family: 'Gloria Hallelujah', cursive;
-  color: orange;]
+img {
+  width: 220px;
 }
-.logo-heading {
-  width: 100%;
-  display:flex;
-  overflow: none;
-}
-.heading {
-  margin:auto;
-  margin-left: 0.8rem;
-  font-size: 1.3rem;
-  text-align: center;
-}
-.logo {
-  margin:auto;
-}
-.logo img{
-  max-width: 8rem;
-}
-#hamburger{
-  margin:auto auto auto -0.6rem;
-}
-a img {
-  max-width:4rem;
-}
-.main-nav {
-  font-family: 'Lato', sans-serif;
-}
-.main-nav ul {
-  list-style: none;
-  background-color: #E0F4EC;
-  text-align: center;
-  padding: 0;
-  margin:0;
 
-}
-.main-nav li {
-  font-size: 1.2em;
-  line-height: 40px;
-  height: 40px;
-  border-bottom: 1px solid #888;
-}
-.main-nav li a{
-  text-decoration: none;
-  color: #1A8B5D;
-  display: block;
-  transition: .3s background-color;
- }
- .main-nav a:hover {
-  color: white;
-  background-color: orange;
-}
- section {
-   margin: 4rem;
-   border-bottom: 2px solid #444;
- }
- section h2 {
-   font-family: 'Gloria Hallelujah', cursive;
-   font-size: 1.6rem;
-   color: #1A8B5D;
- }
- .intro{
-   display: flex;
- }
- .headShot {
-   display: inline-block;
- }
- .list {
-   font-size: 1.2rem;
-   display: inline-block;
-   margin: auto;
- }
- article h3 {
-   font-family: 'Gloria Hallelujah', cursive;
-   font-size: 1.6rem;
-   color: #1A8B5D;
- }*/
  @media screen and (max-width: 600px) {
-   .main-nav {
+   img{
+     width: 180px;
+   }
+   .main-nav ul{
      display: none;
    }
+   .main-nav:hover ul {
+     display: block;
+
+   }
+
  }
  @media screen and (min-width: 600px) {
    .main-nav {
@@ -104,12 +36,12 @@ a img {
    }
    .main-nav li {
      display: inline-block;
-     /*margin-right: -4px;*/
-     width: 110px;
+     width: 7rem;
      border-bottom: none;
-     height: 50px;
-     line-height: 50px;
+     height: 2rem;
+     line-height: 2rem;
      font-size: 1.3em;
+     align-items: center;
    }
    #hamburger {
      display: none;

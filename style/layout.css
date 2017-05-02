@@ -21,9 +21,9 @@ header {
   max-width: 8rem;
 }
 #hamburger{
-  margin:auto auto auto -0.6rem;
+  float: right;
 }
-a img {
+#hamburger img {
   max-width:4rem;
 }
 .main-nav {
@@ -35,6 +35,7 @@ a img {
   text-align: center;
   padding: 0;
   margin:0;
+  clear: right;
 
 }
 .main-nav li {
@@ -53,6 +54,16 @@ a img {
   color: white;
   background-color: orange;
 }
+.filters {
+  height: 2rem;
+  width:40%;
+  margin: auto;
+  border-bottom: none;
+}
+.filters select {
+  margin-top: 1.5rem;
+  width: 11rem;
+}
  section {
    margin: 4rem;
    border-bottom: 2px solid #444;
@@ -62,10 +73,13 @@ a img {
    font-size: 1.6rem;
    color: #1A8B5D;
  }
+ .template {
+   display: none;
+ }
  .intro{
    display: flex;
  }
- .headShot {
+ .head-shot {
    display: inline-block;
  }
  .list {
