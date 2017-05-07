@@ -49,8 +49,8 @@ header {
   color: #1A8B5D;
   display: block;
   transition: .3s background-color;
- }
- .main-nav a:hover {
+}
+.main-nav a:hover {
   color: white;
   background-color: orange;
 }
@@ -64,31 +64,34 @@ header {
   margin-top: 1.5rem;
   width: 11rem;
 }
- section {
-   margin: 4rem;
-   border-bottom: 2px solid #444;
- }
- section h2 {
-   font-family: 'Gloria Hallelujah', cursive;
-   font-size: 1.6rem;
-   color: #1A8B5D;
- }
- .template {
-   display: none;
- }
- .intro{
-   display: flex;
- }
- .head-shot {
-   display: inline-block;
- }
- .list {
-   font-size: 1.2rem;
-   display: inline-block;
-   margin: auto;
- }
- article h3 {
-   font-family: 'Gloria Hallelujah', cursive;
-   font-size: 1.6rem;
-   color: #1A8B5D;
- }
+section {
+  margin: 4rem;
+  border-bottom: 2px solid #444;
+}
+section h2 {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.6rem;
+  color: #1A8B5D;
+}
+article {
+  border-bottom: 2px solid #444
+}
+.template {
+  display: none;
+}
+.intro{
+  display: flex;
+}
+.head-shot {
+  display: inline-block;
+}
+.list {
+  font-size: 1.2rem;
+  display: inline-block;
+  margin: auto;
+}
+article h3 {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.6rem;
+  color: #1A8B5D;
+}

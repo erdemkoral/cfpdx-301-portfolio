@@ -17,33 +17,33 @@ img {
   width: 220px;
 }
 
- @media screen and (max-width: 600px) {
-   img{
-     width: 180px;
-   }
-   .main-nav ul{
-     display: none;
-   }
-   .main-nav:hover ul {
-     display: block;
+@media screen and (max-width: 600px) {
+  img{
+    width: 180px;
+  }
+  .main-nav ul{
+    display: none;
+  }
+  .main-nav:hover ul {
+    display: block;
 
-   }
+  }
 
- }
- @media screen and (min-width: 600px) {
-   .main-nav {
-     display: inline;
-   }
-   .main-nav li {
-     display: inline-block;
-     width: 7rem;
-     border-bottom: none;
-     height: 2rem;
-     line-height: 2rem;
-     font-size: 1.3em;
-     align-items: center;
-   }
-   #hamburger {
-     display: none;
-   }
- }
+}
+@media screen and (min-width: 600px) {
+  .main-nav {
+    display: inline;
+  }
+  .main-nav li {
+    display: inline-block;
+    width: 7rem;
+    border-bottom: none;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.3em;
+    align-items: center;
+  }
+  #hamburger {
+    display: none;
+  }
+}
