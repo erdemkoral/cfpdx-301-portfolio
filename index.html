@@ -6,6 +6,29 @@
   <link rel="stylesheet" href="style/base.css">
   <link rel="stylesheet" href="style/layout.css">
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Lato" rel="stylesheet">
+
+  <script id="chickenTemplate" type="text/x-handlebars-template">
+    <article data-name="{{ title }}" data-temper="{{ temperament }}">
+      <h3>{{title}}</h3>
+      <div class"intro">
+        <div class="head-shot"><img src="{{ image }}"></div>
+        <div class="list">
+          <ul>
+            <li id="1">Average egg production: {{ eggProduction }}</li>
+            <li id="2">Average weight: {{ temperament }}</li>
+            <li id="3">Starts laying eggs by:{{ startLaying }}</li>
+            <li id="4">Average weight: {{ weight }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="description">{{{ description }}}</div>
+      <div>
+        <a href="#" class="read-on">Read more</a>
+      </div>
+      <div class="publishedOn">Published on {{ publishedOn }}. {{ daysAgo}} days ago.</div>
+    </article>
+  </script>
+
 </head>
 <body>
   <header class="site-header">
@@ -39,30 +62,11 @@
       </select>
     </section>
     <section id="chickens" class="tab-content">
-      <article class="template" data-category="temp">
-        <h3></h3>
-        <div class"intro">
-          <div class="head-shot"><img></div>
-          <div class="list">
-          <ul>
-            <li id="1"></li>
-            <li id="2"></li>
-            <li id="3"></li>
-            <li id="4"></li>
-          </ul>
-        </div>
-        </div>
-        <div class="description"></div>
-        <div>
-          <a href="#" class="read-on">Read more</a>
-        </div>
-        <div class="publishedOn"></div>
-      </article>
     </section>
-
   </main>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="app/appData.js"></script>
-<script type="text/javascript" src="app/app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+  <script type="text/javascript" src="app/appData.js"></script>
+  <script type="text/javascript" src="app/app.js"></script>
 </body>
 </html>

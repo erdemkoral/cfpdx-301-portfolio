@@ -58,6 +58,7 @@ var rawChickenData = [
     weight:         '6 lbs',
     startLaying:    '18 weeks',
     image:          'img/wyandotte.jpeg',
+    publishedOn:    '2016-12-20',
     description:           '<p>These big birds will give you a good egg layers, but the large size will also be good for the pot, if need be.</p><p>They are gentle, calm and are terrific foragers, which means they are some of the best chickens for free range. The extremely beautifully colorful chickens are a sight that few can resist, and they tend to be broody, so if you allow a clutch of eggs to hatch for a sustainable flock, the hen will do a good job with the chicks</p>'
   },
   {

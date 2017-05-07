@@ -1,4 +1,5 @@
 var allChickens = [];
+var view ={};
 //object constructor
 function Chicken (chix)  {
   this.title = chix.title;
@@ -12,21 +13,10 @@ function Chicken (chix)  {
 }
 
 Chicken.prototype.toHtml = function() {
-  var $newChicken =  $('article.template').clone().removeClass('template');
-  var daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
-  $newChicken.attr('data-name', this.title);
-  $newChicken.attr('data-startlaying', this.startLaying);
-  $newChicken.attr('data-temper', this.temperament);
-  $newChicken.find('h3').text(this.title);
-  $newChicken.find('#1').text("Egg Production: " + this.eggProduction);
-  $newChicken.find('#2').text("Temperament: " + this.temperament);
-  $newChicken.find('#3').text("Starts Laying Eggs By: " + this.startLaying);
-  $newChicken.find('#4').text("Average Weight: " + this.weight);
-  $newChicken.find('.publishedOn').text("Published on " + this.publishedOn +" (" + daysAgo +" days ago)");
-  $newChicken.find('.description').html(this.description);
-  $newChicken.find('.head-shot img').attr('src',  this.image);
-
-  return $newChicken;
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+  var template = $('#chickenTemplate').html();
+  var compiledTemplate = Handlebars.compile(template);
+  $('#chickens').append(compiledTemplate(this));
 };
 
 //passes constructed objects to allChickens
@@ -55,7 +45,7 @@ allChickens.forEach(function(a){
 });
 
 // filter by title
-function chicFilter(){
+view.chickFilter = function(){
   $('.chicken-filter').change(function(){
     $('article').hide();
     var selectedValue = $(this).val();
@@ -65,12 +55,12 @@ function chicFilter(){
     }else{
       $('article').not('.template').show();
     }
+    $('.temper-filter').val('');
   });
 }
-chicFilter();
 
 // filter by temperament
-function tempFilter(){
+view.tempFilter = function(){
   $('.temper-filter').change(function(){
     $('article').hide();
     var selectedValue = $(this).val();
@@ -80,29 +70,28 @@ function tempFilter(){
     }else{
       $('article').not('.template').show();
     }
+    $('.chicken-filter').val('');
   });
 }
-tempFilter();
 
-function teaser(){
+view.teaser = function(){
   console.log('in the fuction');
   var hiddenContent = $('.description *:nth-of-type(n+2)')
- hiddenContent.hide();
- $('.read-on').click(function(e) {
-   e.preventDefault();
-   console.log('you clicked');
-   if($(this).text() === 'Read more') {
-    $('.description').find('p').fadeIn();
-     $(this).text('Show Less');
-   } else if ($(this).text() === 'Show Less'){
-     hiddenContent.hide();
-     $(this).text('Read more');
-   }
- });
+  hiddenContent.hide();
+  $('.read-on').click(function(e) {
+    e.preventDefault();
+    console.log('you clicked');
+    if($(this).text() === 'Read more') {
+      $('.description').find('p').fadeIn();
+      $(this).text('Show Less');
+    } else if ($(this).text() === 'Show Less'){
+      hiddenContent.hide();
+      $(this).text('Read more');
+    }
+  });
 }
-teaser();
 
-$(document).ready(function(){
+view.singlePage = function(){
   //show only About section
   $('nav').find('li:first').on('click', function(){
     $('#chickens').hide();
@@ -115,4 +104,9 @@ $(document).ready(function(){
     $('#chickens').show();
     $('#about').hide();
   });
-});
+}
+
+view.chickFilter();
+view.tempFilter();
+view.teaser();
+view.singlePage();
