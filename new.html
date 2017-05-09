@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" charset="utf-8" content="width=device-width">
+  <title>Home</title>
+  <link rel="stylesheet" href="style/base.css">
+  <link rel="stylesheet" href="style/layout.css">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Lato" rel="stylesheet">
+
+  <script id="chickenTemplate"  type="text/x-handlebars-template">
+    <article data-name="{{ title }}" data-temper="{{ temperament }}">
+      <h3>{{title}}</h3>
+      <div class"intro">
+        <div class="head-shot"><img src="{{ image }}"></div>
+        <div class="list">
+          <ul>
+            <li id="1">Average egg production: {{ eggProduction }}</li>
+            <li id="2">Average weight: {{ temperament }}</li>
+            <li id="3">Starts laying eggs by:{{ startLaying }}</li>
+            <li id="4">Average weight: {{ weight }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="description">{{{ description }}}</div>
+      <div>
+        <a href="#" class="read-on">Read more</a>
+      </div>
+      <div class="publishedOn">Published on {{ publishedOn }}. {{ daysAgo}} days ago.</div>
+    </article>
+  </script>
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-heading">
+      <div class="logo"><img src="img/chicken.jpg" alt="chicken-logo"></div>
+      <div class="heading">
+        <h1>Clickety Cluck Cluck</h1>
+        <h3>Super Duper Egg Layers</h3>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <span id="hamburger" href="#"><img src="img/menu_icon.png" alt=""></span>
+      <ul>
+        <li><a href="#">Coop</a></li>
+        <li><a href="#">Chickens</a></li>
+        <li><a href="https://github.com/erdemkoral/" target="_blank">Git Hub</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="clearfix">
+    <section id="write" class="tab-content">
+      <h1>New Article</h1>
+      <!-- REVIEW: Set up a form to accept user input for a new blog article: -->
+      <form action="#" id="new-form">
+        <label>
+          <input type="text" id="chicken-title" placeholder="Chicken Name" required>
+        </label>
+        <textarea id="chicken-body" rows="8" cols="40" required></textarea>
+        <label>
+          <input type="text" id="chicken-eggProduction" placeholder="Average egg production" required>
+        </label>
+        <label>
+          <input type="text" id="chicken-temperament" placeholder="Temperament" required>
+        </label>
+        <label>
+          <input type="text" id="chicken-startLaying" placeholder="Starts laying eggs by week:" required>
+        </label>
+        <label>
+          <input type="text" id="chicken-weight" placeholder="Average weight">
+        </label>
+        <label>
+          <input type="checkbox" id="chicken-published"> Published
+        </label>
+      </form>
+    </section>
+    <section id="articles" class="tab-content">
+
+    </section>
+    <!-- <section id="article-export">
+      <label id="export-field" for="article-json" class="pull-right">
+        <input type="text" readonly id="article-json">
+        When finalized, copy the above JSON, and paste into blogArticles.js
+      </label>
+    </section> -->
+  </main>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+  <script type="text/javascript" src="app/appData.js"></script>
+  <script type="text/javascript" src="app/app.js"></script>
+</body>
+</html>

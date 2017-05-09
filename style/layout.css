@@ -95,3 +95,7 @@ article h3 {
   font-size: 1.6rem;
   color: #1A8B5D;
 }
+
+form label input{
+  display: block;
+}

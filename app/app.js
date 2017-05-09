@@ -16,7 +16,9 @@ Chicken.prototype.toHtml = function() {
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   var template = $('#chickenTemplate').html();
   var compiledTemplate = Handlebars.compile(template);
-  $('#chickens').append(compiledTemplate(this));
+  // $('#chickens').append(compiledTemplate(this));
+  return compiledTemplate(this);
+
 };
 
 //passes constructed objects to allChickens
@@ -106,6 +108,22 @@ view.singlePage = function(){
   });
 }
 
+view.create = function(){
+  let chicken = new Chicken({
+    title: $('#chicken-title').val(),
+    description: $('#chicken-body').val(),
+    eggProduction: $('#chicken-eggProduction').val(),
+    temperament: $('#chicken-temperament').val(),
+    startLaying: $('#chicken-startLaying').val(),
+    weight: $('#chicken-weight').val(),
+    publishedOn: new Date(),
+  });
+  $('#articles').empty();
+  $('#articles').append(chicken.toHtml());
+  console.log('ek',chicken.toHtml());
+}
+
+$('#new-form').on('change', 'input, textarea', view.create);
 view.chickFilter();
 view.tempFilter();
 view.teaser();
