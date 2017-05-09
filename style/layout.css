@@ -59,9 +59,9 @@ header {
   width:40%;
   margin: auto;
   border-bottom: none;
+  display: block;
 }
 .filters select {
-  margin-top: 1.5rem;
   width: 11rem;
 }
 section {
@@ -94,4 +94,8 @@ article h3 {
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 1.6rem;
   color: #1A8B5D;
+}
+
+form label input{
+  display: block;
 }
