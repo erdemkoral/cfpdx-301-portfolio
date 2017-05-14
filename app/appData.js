@@ -102,3 +102,5 @@ var rawChickenData = [
     description:           '<p>One of the heaviest layers, not only because they lay more than 250 eggs per year but also because the females weight almost 8 lbs in average. However, contrast to their size, Sussex does not need big spaces.</p><p>They are gentle, calm and are terrific foragers, which means they are some of the best chickens for free range. Be careful when raising Sussex with other breeds. They are usually the target of bullies.</p>'
   }
 ];
+
+// console.log(JSON.stringify(rawChickenData));

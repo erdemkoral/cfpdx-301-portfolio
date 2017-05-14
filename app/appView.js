@@ -1,4 +1,4 @@
-var view ={};
+const view ={};
 
 // filter by title
 view.chickFilter = function(){
@@ -62,7 +62,9 @@ view.singlePage = function(){
   });
 }
 
-view.create = function(){
+
+//this is the form building function
+/*view.create = function(){
   let chicken = new Chicken({
     title: $('#chicken-title').val(),
     description: $('#chicken-body').val(),
@@ -76,9 +78,15 @@ view.create = function(){
   $('#articles').append(chicken.toHtml());
   console.log('ek',chicken.toHtml());
 }
-$('#new-form').on('change', 'input, textarea', view.create);
-
+$('#new-form').on('change', 'input, textarea', view.create);*/
+view.initIndexPage = function() {
+  Chicken.all.forEach(function(a){
+    $('#chickens').append(a.toHtml());
+    populateChickenFilter(a.title);
+    populateTemperFilter(a.temperament);
+  });
 view.chickFilter();
 view.tempFilter();
 view.teaser();
 view.singlePage();
+};
