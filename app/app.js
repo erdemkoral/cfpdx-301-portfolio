@@ -1,4 +1,3 @@
-var allChickens = [];
 //object constructor
 function Chicken (chix)  {
   this.title = chix.title;
@@ -18,15 +17,22 @@ function Chicken (chix)  {
   };
 }
 
+Chicken.all = [];
 //passes constructed objects to allChickens
-rawChickenData.forEach(function(ele){
-  allChickens.push(new Chicken(ele));
-});
+// rawChickenData.forEach(function(ele){
+//   allChickens.push(new Chicken(ele));
+// });
 
 //sorts allChickens title alphabeticaly
-allChickens.sort(function(a,b){
+Chicken.loadAll = function (rawChickenData){
+rawChickenData.sort(function(a,b){
   return (a.title > b.title);
 });
+rawChickenData.forEach(function(ele){
+  Chicken.all.push(new Chicken(ele));
+})
+}
+
 
 function populateChickenFilter (chickenName){
   var optionTag = '<option value="' + chickenName+ '">' + chickenName + '</option>';
@@ -42,8 +48,20 @@ function populateTemperFilter (chickenTemper){
   }
 }
 
-allChickens.forEach(function(a){
-  $('#chickens').append(a.toHtml());
-  populateChickenFilter(a.title);
-  populateTemperFilter(a.temperament);
-});
+
+Chicken.fetchAll = function() {
+  if (localStorage.rawChickenData) {
+    Chicken.loadAll(JSON.parse(localStorage.rawChickenData));
+  } else {
+    $.getJSON( 'data/appData.json', function ( json ) {
+      console.log( 'JSON Data: ', json);
+      localStorage.setItem('rawChickenData', JSON.stringify(json));
+    });
+  }
+  view.initIndexPage();
+}
+
+
+// $.getJSON('app/appData.json', function(json){
+//   console.log(json);
+// });
