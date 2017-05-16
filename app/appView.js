@@ -48,37 +48,40 @@ view.teaser = function(){
 }
 
 view.singlePage = function(){
-  //show only About section
-  $('nav').find('li:first').on('click', function(){
-    $('#chickens').hide();
-    $('#about').fadeIn().css({"height": "600px"});
+  // //show only About section
+  // $('#nav-home').on('click', function(){
+  //   $('#about').hide();
+  //   $('#chickens').fadeIn().css({"height": "600px"});
+  // });
+  // //show only Chickens section
+  // $('#nav-about').on('click', function(e){
+  //   console.log("ide click");
+  //   e.preventDefault();
+  //   $('#about').show();
+  //   $('#chickens').hide();
+  // });
+  $('.main-nav').on('click', '.tab', function(e) {
+    $('.tab-content').hide();
+    $('#' + $(this).data('content')).fadeIn();
   });
-  //show only Chickens section
-  $('nav').find('li:nth-child(2)').on('click', function(e){
-    console.log("ide click");
-    e.preventDefault();
-    $('#chickens').show();
-    $('#about').hide();
-  });
+
+  $('.main-nav .tab:first').click();
 }
 
-
-//this is the form building function
-/*view.create = function(){
-  let chicken = new Chicken({
-    title: $('#chicken-title').val(),
-    description: $('#chicken-body').val(),
-    eggProduction: $('#chicken-eggProduction').val(),
-    temperament: $('#chicken-temperament').val(),
-    startLaying: $('#chicken-startLaying').val(),
-    weight: $('#chicken-weight').val(),
-    publishedOn: new Date(),
-  });
-  $('#articles').empty();
-  $('#articles').append(chicken.toHtml());
-  console.log('ek',chicken.toHtml());
+function populateChickenFilter (chickenName){
+  var optionTag = '<option value="' + chickenName+ '">' + chickenName + '</option>';
+  if($('chicken-filter opt[value="' + chickenName +'"]').length === 0){
+    $('.chicken-filter').append(optionTag);
+  }
 }
-$('#new-form').on('change', 'input, textarea', view.create);*/
+
+function populateTemperFilter (chickenTemper){
+  var optionTag = '<option value="' + chickenTemper+ '">' + chickenTemper + '</option>';
+  if($('.temper-filter option[value="' + chickenTemper + '"]').length === 0) {
+    $('.temper-filter').append(optionTag);
+  }
+}
+
 view.initIndexPage = function() {
   Chicken.all.forEach(function(a){
     $('#chickens').append(a.toHtml());

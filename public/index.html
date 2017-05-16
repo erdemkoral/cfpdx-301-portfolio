@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" charset="utf-8" content="width=device-width">
+  <title>Home</title>
+  <link rel="stylesheet" href="style/base.css">
+  <link rel="stylesheet" href="style/layout.css">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Lato" rel="stylesheet">
+
+  <script id="chickenTemplate" type="text/x-handlebars-template">
+    <article data-name="{{ title }}" data-temper="{{ temperament }}">
+      <h3>{{title}}</h3>
+      <div class"intro">
+        <div class="head-shot"><img src="{{ image }}"></div>
+        <div class="list">
+          <ul>
+            <li id="1">Average egg production: {{ eggProduction }}</li>
+            <li id="2">Temperament: {{ temperament }}</li>
+            <li id="3">Starts laying eggs by: {{ startLaying }}</li>
+            <li id="4">Average weight: {{ weight }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="description">{{{ description }}}</div>
+      <div>
+        <a href="#" class="read-on">Read more</a>
+      </div>
+      <div class="publishedOn">Published on {{ publishedOn }}. {{ daysAgo}} days ago.</div>
+    </article>
+  </script>
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-heading">
+      <div class="logo"><img src="img/chicken.jpg" alt="chicken-logo"></div>
+      <div class="heading">
+        <h1>Clickety Cluck Cluck</h1>
+        <h3>Super Duper Egg Layers</h3>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <span id="hamburger" href="#"><img src="img/menu_icon.png" alt=""></span>
+      <ul>
+        <li class="tab" data-content="chickens"><a href="#">HOME</a></li>
+        <li class="tab" data-content="about"><a href="#">ABOUT</a></li>
+        <li><a href="https://github.com/erdemkoral/" target="_blank">Git Hub</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="about" class="tab-content">
+      <h2>About us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula eleifend, mollis metus id, accumsan lacus. Proin finibus tincidunt urna. Pellentesque pellentesque, nibh vel tincidunt ultricies, nunc purus accumsan nunc, et placerat nibh velit eu mi. Nam neque libero, tincidunt at bibendum et, mollis eu erat. Integer libero tellus, pharetra sed tortor vitae, tincidunt dictum neque. Integer magna ante, blandit fermentum justo nec, ullamcorper imperdiet mauris. Quisque dictum iaculis lobortis. Phasellus eu ligula nunc. Fusce a malesuada erat. Donec in augue nec erat accumsan finibus ac non leo. Nulla ac sem tempor, feugiat dui in, aliquet mi. In volutpat mi ut sagittis porttitor. Mauris consectetur hendrerit arcu ultrices fermentum. Duis sit amet ex vitae velit cursus molestie et vel magna. Integer a convallis libero, in vestibulum libero. Fusce ante enim, efficitur in hendrerit quis, aliquam sed nisl.</p>
+    </section>
+    <section id="chickens" class="tab-content">
+      <div class='filters'>
+        <select class="chicken-filter">
+          <option value="">Pick a chicken</option>
+        </select>
+        <select class="temper-filter">
+          <option value="">Chicks with attitute</option>
+        </select>
+      </div>
+    </section>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+  <script type="text/javascript" src="app/app.js"></script>
+  <script type="text/javascript" src="app/appView.js"></script>
+  <script>
+    Chicken.fetchAll();
+  </script>
+</body>
+</html>
