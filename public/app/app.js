@@ -19,8 +19,8 @@ function Chicken (chix)  {
 
 Chicken.all = [];
 
-//sorts allChickens title alphabeticaly
 Chicken.loadAll = function (rawChickenData){
+  //sorts allChickens title alphabeticaly
   rawChickenData.sort(function(a,b){
     return (a.title > b.title);
   });

@@ -5,7 +5,6 @@ view.chickFilter = function(){
   $('.chicken-filter').change(function(){
     $('article').hide();
     var selectedValue = $(this).val();
-    console.log(selectedValue);
     if(selectedValue){
       $('article[data-name="' + selectedValue + '"]').fadeIn(800);
     }else{
@@ -20,7 +19,6 @@ view.tempFilter = function(){
   $('.temper-filter').change(function(){
     $('article').hide();
     var selectedValue = $(this).val();
-    console.log(selectedValue);
     if(selectedValue){
       $('article[data-temper="' + selectedValue + '"]').fadeIn(800);
     }else{
@@ -31,12 +29,10 @@ view.tempFilter = function(){
 }
 
 view.teaser = function(){
-  console.log('in the fuction');
   var hiddenContent = $('.description *:nth-of-type(n+2)')
   hiddenContent.hide();
   $('.read-on').click(function(e) {
     e.preventDefault();
-    console.log('you clicked');
     if($(this).text() === 'Read more') {
       $(this).parent().siblings().find('*').fadeIn();
       $(this).text('Show Less');
