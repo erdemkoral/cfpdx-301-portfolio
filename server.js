@@ -11,6 +11,10 @@ app.get('/', function(request, response){
   response.sendFile('index.html', {root:'./public'})
 });
 
+app.get('/about', function(request, response){
+  response.sendFile('index.html', {root:'./public'})
+});
+
 app.listen(PORT, function(){
   console.log(`Listening on port: ${PORT}`);
 });

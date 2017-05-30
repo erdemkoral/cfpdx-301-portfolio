@@ -42,8 +42,8 @@
     <nav class="main-nav">
       <span id="hamburger" href="#"><img src="img/menu_icon.png" alt=""></span>
       <ul>
-        <li class="tab" data-content="chickens"><a href="#">HOME</a></li>
-        <li class="tab" data-content="about"><a href="#">ABOUT</a></li>
+        <li class="tab" data-content="chickens"><a href="/">HOME</a></li>
+        <li class="tab" data-content="about"><a href="/about">ABOUT</a></li>
         <li><a href="https://github.com/erdemkoral/" target="_blank">Git Hub</a></li>
       </ul>
     </nav>
@@ -65,11 +65,12 @@
     </section>
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-  <script type="text/javascript" src="app/app.js"></script>
-  <script type="text/javascript" src="app/appView.js"></script>
-  <script>
-    Chicken.fetchAll();
-  </script>
+  <script src="/vendor/scripts/handlebars.js"></script>
+  <script src="/vendor/scripts/page.js"></script>
+  <script type="text/javascript" src="scripts/models/app.js"></script>
+  <script type="text/javascript" src="scripts/views/appView.js"></script>
+  <script type="text/javascript" src="/scripts/controllers/homeController.js"></script>
+  <script type="text/javascript" src="/scripts/controllers/aboutController.js"></script>
+  <script type="text/javascript" src="/scripts/controllers/routes.js"></script>
 </body>
 </html>
