@@ -1,7 +1,7 @@
+(function(module){
 const view ={};
-
 // filter by title
-view.chickFilter = function(){
+view.chickFilter = () => {
   $('.chicken-filter').change(function(){
     $('article').hide();
     var selectedValue = $(this).val();
@@ -12,10 +12,10 @@ view.chickFilter = function(){
     }
     $('.temper-filter').val('');
   });
-}
+};
 
 // filter by temperament
-view.tempFilter = function(){
+view.tempFilter = () => {
   $('.temper-filter').change(function(){
     $('article').hide();
     var selectedValue = $(this).val();
@@ -26,9 +26,9 @@ view.tempFilter = function(){
     }
     $('.chicken-filter').val('');
   });
-}
+};
 
-view.teaser = function(){
+view.teaser = () => {
   var hiddenContent = $('.description *:nth-of-type(n+2)')
   hiddenContent.hide();
   $('.read-on').click(function(e) {
@@ -41,40 +41,31 @@ view.teaser = function(){
       $(this).text('Read more');
     }
   });
-}
-
-
-view.singlePage = function() {
-  $('.main-nav').on('click', '.tab', function(e) {
-    $('.tab-content').hide();
-    $('#' + $(this).data('content')).fadeIn();
-  });
-
-  $('.main-nav .tab:first').click();
 };
 
-function populateChickenFilter (chickenName){
+view.populateChickenFilter = (chickenName) => {
   var optionTag = '<option value="' + chickenName+ '">' + chickenName + '</option>';
   if($('chicken-filter opt[value="' + chickenName +'"]').length === 0){
     $('.chicken-filter').append(optionTag);
   }
-}
+};
 
-function populateTemperFilter (chickenTemper){
+view.populateTemperFilter = (chickenTemper) => {
   var optionTag = '<option value="' + chickenTemper+ '">' + chickenTemper + '</option>';
   if($('.temper-filter option[value="' + chickenTemper + '"]').length === 0) {
     $('.temper-filter').append(optionTag);
   }
-}
+};
 
-view.initIndexPage = function() {
-  Chicken.all.forEach(function(a){
+view.initIndexPage = () => {
+  Chicken.all.map(a => {
     $('#chickens').append(a.toHtml());
-    populateChickenFilter(a.title);
-    populateTemperFilter(a.temperament);
+    view.populateChickenFilter(a.title);
+    view.populateTemperFilter(a.temperament);
   });
 view.chickFilter();
 view.tempFilter();
 view.teaser();
-view.singlePage();
 };
+module.view = view;
+})(window);
