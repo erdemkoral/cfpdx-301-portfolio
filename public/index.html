@@ -29,6 +29,18 @@
     </article>
   </script>
 
+  <script id="repo-template" type="text/x-handlebars-template">
+      <li>
+        <a href="{{html_url}}" target="_blank"><h3>{{html_url}}</h3></a>
+        <p>Description: {{ description }}</p>
+        <p>Language: {{ language }}</p>
+        <p>Created: {{ created_at }}</p>
+        <p>Last updated: {{ updated_at }}</p>
+        {{#if watchers_count}}
+          <p>{{watchers_count}} watching this repo</p>
+        {{/if}}
+      </li>
+    </script>
 </head>
 <body>
   <header class="site-header">
@@ -52,6 +64,7 @@
     <section id="about" class="tab-content">
       <h2>About us</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula eleifend, mollis metus id, accumsan lacus. Proin finibus tincidunt urna. Pellentesque pellentesque, nibh vel tincidunt ultricies, nunc purus accumsan nunc, et placerat nibh velit eu mi. Nam neque libero, tincidunt at bibendum et, mollis eu erat. Integer libero tellus, pharetra sed tortor vitae, tincidunt dictum neque. Integer magna ante, blandit fermentum justo nec, ullamcorper imperdiet mauris. Quisque dictum iaculis lobortis. Phasellus eu ligula nunc. Fusce a malesuada erat. Donec in augue nec erat accumsan finibus ac non leo. Nulla ac sem tempor, feugiat dui in, aliquet mi. In volutpat mi ut sagittis porttitor. Mauris consectetur hendrerit arcu ultrices fermentum. Duis sit amet ex vitae velit cursus molestie et vel magna. Integer a convallis libero, in vestibulum libero. Fusce ante enim, efficitur in hendrerit quis, aliquam sed nisl.</p>
+      <ul></ul>
     </section>
     <section id="chickens" class="tab-content">
       <div class='filters'>
@@ -69,8 +82,10 @@
   <script src="/vendor/scripts/page.js"></script>
   <script type="text/javascript" src="scripts/models/app.js"></script>
   <script type="text/javascript" src="scripts/views/appView.js"></script>
+  <script src="/scripts/views/repoView.js"></script>
   <script type="text/javascript" src="/scripts/controllers/homeController.js"></script>
   <script type="text/javascript" src="/scripts/controllers/aboutController.js"></script>
+  <script src="/scripts/models/repos.js"></script>
   <script type="text/javascript" src="/scripts/controllers/routes.js"></script>
 </body>
 </html>
