@@ -1,5 +1,5 @@
 'use strict';
-var githubToken = 'faeb8169e88e13335f540db06760adb6cd0b6f50';
+
 (function(module){
 const repos = {};
 repos.all = [];
