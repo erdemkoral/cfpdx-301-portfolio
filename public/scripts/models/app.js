@@ -45,7 +45,7 @@
       }
     });
   };
-  Chicken.checkETag();
+  
 
 
   Chicken.fetchAll = () => {

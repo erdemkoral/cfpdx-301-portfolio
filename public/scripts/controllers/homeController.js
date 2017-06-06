@@ -2,7 +2,7 @@
 const homeController ={};
 
 homeController.initHomeIndex = function () {
-  Chicken.fetchAll();
+  Chicken.checkETag();
   $('.tab-content').hide();
   $('#chickens').fadeIn();
 };
