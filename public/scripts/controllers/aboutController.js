@@ -1,11 +1,11 @@
 (function(module) {
-const aboutController = {};
+  const aboutController = {};
 
-aboutController.initAboutPage = function () {
-  $('.tab-content').hide();
-  $('#about').fadeIn();
-  repos.requestRepos(repoView.index);
-};
+  aboutController.initAboutPage = function () {
+    $('.tab-content').hide();
+    $('#about').fadeIn();
+    repos.requestRepos(repoView.index);
+  };
 
-module.aboutController = aboutController;
+  module.aboutController = aboutController;
 })(window);
